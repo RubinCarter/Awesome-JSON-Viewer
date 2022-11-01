@@ -46,7 +46,8 @@ class JSONInput extends Component {
         }
 
         try {
-            const json = JSON.parse(rawJSON);
+            var JsonBig = require('json-bigint')({ storeAsString: true });
+            const json = JSON.parse(JsonBig.stringify(JsonBig.parse(rawJSON)));
             this.props.changeJSON(json);
         } catch (e) {
             this.setState({
