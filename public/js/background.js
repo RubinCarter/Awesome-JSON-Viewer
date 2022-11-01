@@ -1,8 +1,8 @@
-chrome.browserAction.onClicked.addListener(function (tab) {
+chrome.action.onClicked.addListener(function (tab) {
     chrome.tabs.create(
-        { url: chrome.extension.getURL('index.html') },
+        { url: chrome.runtime.getURL('index.html') },
         function (tab) {},
-    );
+        );
 });
 
 const RB_DOWNLOAD_JSON_MENU = 'RB_DOWNLOAD_JSON_MENU';
